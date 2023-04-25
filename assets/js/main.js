@@ -3,6 +3,7 @@ const costoElements = document.querySelectorAll('.costo')
 const manoElements = document.querySelectorAll('.mano')
 const mainElement = document.querySelector('.main')
 const addElement = document.querySelector('.add')
+const removeElement = document.querySelector('.remove')
 
 const costoCallback = event => {
     event.target.parentNode.querySelector('.bruto').value = event.target.value - event.target.parentNode.querySelector('.mano').value
@@ -48,7 +49,9 @@ addElement.addEventListener('click', () => {
     mainElement.appendChild(newFilaElement)
 })
 
-console.log(document.querySelector('.date-now'));
+removeElement.addEventListener('click', () => {
+    if(mainElement.childNodes.length > 3) mainElement.lastChild.remove()
+})
 
 document.querySelectorAll('.date-now').forEach(dateNowElement => {
     let now = new Date();
