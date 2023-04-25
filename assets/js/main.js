@@ -26,7 +26,7 @@ const costoCallback = event => {
     totalCostoElement.innerHTML = totalCosto
 
     totalPropElement.innerHTML = (parseFloat(totalManoElement.innerHTML) * 100) / parseFloat(totalCostoElement.innerHTML)
-    totalBrutoElement.innerHTML = parseFloat(totalCostoElement.innerHTML) - parseFloat(totalManoElement.innerHTML)
+    totalBrutoElement.innerHTML = Math.round(parseFloat(totalCostoElement.innerHTML) - parseFloat(totalManoElement.innerHTML))
 }
 
 const manoCallback = event => {
@@ -48,7 +48,7 @@ const manoCallback = event => {
     totalManoElement.innerHTML = totalMano
 
     totalPropElement.innerHTML = (parseFloat(totalManoElement.innerHTML) * 100) / parseFloat(totalCostoElement.innerHTML)
-    totalBrutoElement.innerHTML = parseFloat(totalCostoElement.innerHTML) - parseFloat(totalManoElement.innerHTML)
+    totalBrutoElement.innerHTML = Math.round(parseFloat(totalCostoElement.innerHTML) - parseFloat(totalManoElement.innerHTML))
 }
 
 costoElements.forEach(costoElement => {
